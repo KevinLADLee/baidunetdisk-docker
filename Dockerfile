@@ -6,12 +6,6 @@ ENV DISPLAY=":1"
 ENV ENABLE_CJK_FONT=1
 ENV TZ=Asia/Shanghai
 
-# RUN apt-get update && apt-get install -y --no-install-recommends apt-transport-https ca-certificates \
-#     && sed -i "s@http://ftp.debian.org@https://mirrors.huaweicloud.com@g" /etc/apt/sources.list \
-#     && sed -i "s@http://security.debian.org@https://mirrors.huaweicloud.com@g" /etc/apt/sources.list \
-#     && sed -i "s@http://deb.debian.org@https://mirrors.huaweicloud.com@g" /etc/apt/sources.list \
-#     && sed -i "s@http://deb.nodesource.com/node_8.x@https://mirrors.tuna.tsinghua.edu.cn/nodesource/deb_8.x/@g" /etc/apt/sources.list.d/nodesource.list
-
 RUN apt-get update \
     && apt-get install -y --no-install-recommends wget                  \
                           desktop-file-utils    \
@@ -23,12 +17,12 @@ RUN apt-get update \
                           fonts-wqy-zenhei      \   
     && rm -rf /var/lib/apt/lists/*
 
-RUN wget ${URI} -O /defaults/baidunetdisk.deb     \
+RUN wget -q ${URI} -O /defaults/baidunetdisk.deb     \
     && apt-get install -y /defaults/baidunetdisk.deb \
     && rm /defaults/baidunetdisk.deb 
 
 RUN \
-    APP_ICON_URL='https://raw.githubusercontent.com/KevinLADLee/icon/master/baidunetdisk.png' && \
+    APP_ICON_URL='https://raw.githubusercontent.com/KevinLADLee/baidunetdisk-docker/master/logo.png' && \
     install_app_icon.sh "$APP_ICON_URL"
 
 COPY rootfs/ /
