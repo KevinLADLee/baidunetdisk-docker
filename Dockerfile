@@ -1,7 +1,7 @@
 FROM jlesage/baseimage-gui:debian-9
 
-ENV VERSION=3.0.1.2
-ENV URI=http://wppkg.baidupcs.com/issue/netdisk/LinuxGuanjia/3.0.1/baidunetdisk_linux_3.0.1.2.deb
+ENV VERSION=3.3.2
+ENV URI=http://wppkg.baidupcs.com/issue/netdisk/Linuxguanjia/3.3.2/baidunetdisk_3.3.2_amd64.deb
 ENV DISPLAY=":1"
 ENV ENABLE_CJK_FONT=1
 ENV TZ=Asia/Shanghai
@@ -9,12 +9,19 @@ ENV TZ=Asia/Shanghai
 RUN apt-get update \
     && apt-get install -y --no-install-recommends wget                  \
                           desktop-file-utils    \
-                          libnss3               \
-                          libgtk-3-dev          \
-                          libxss-dev            \
                           libasound2-dev        \
                           locales               \
                           fonts-wqy-zenhei      \   
+                          libgtk-3-0            \
+                          libnotify4            \
+                          libnss3               \
+                          libxss1               \
+                          libxtst6              \
+                          xdg-utils             \
+                          libatspi2.0-0         \
+                          libuuid1              \  
+                          libappindicator3-1    \
+                          libsecret-1-0         \
     && rm -rf /var/lib/apt/lists/*
 
 RUN wget -q ${URI} -O /defaults/baidunetdisk.deb     \
