@@ -34,7 +34,6 @@ RUN \
     install_app_icon.sh "$APP_ICON_URL"
 
 COPY rootfs/ /
-COPY VERSION /
 
 ENV APP_NAME="BaiduNetdisk" \
     S6_KILL_GRACETIME=8000
