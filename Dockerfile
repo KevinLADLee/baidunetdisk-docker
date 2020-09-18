@@ -1,7 +1,8 @@
 FROM jlesage/baseimage-gui:debian-9
 
-ENV VERSION=3.3.2
-ENV URI=http://wppkg.baidupcs.com/issue/netdisk/Linuxguanjia/3.3.2/baidunetdisk_3.3.2_amd64.deb
+ENV VERSION=3.4.1
+ENV URI=http://issuecdn.baidupcs.com/issue/netdisk/LinuxGuanjia/3.4.1/baidunetdisk_3.4.1_amd64.deb
+
 ENV DISPLAY=":1"
 ENV ENABLE_CJK_FONT=1
 ENV TZ=Asia/Shanghai
