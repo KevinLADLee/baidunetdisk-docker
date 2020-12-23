@@ -1,7 +1,7 @@
 FROM jlesage/baseimage-gui:debian-9
 
-ENV VERSION=3.4.1
-ENV URI=http://issuecdn.baidupcs.com/issue/netdisk/LinuxGuanjia/3.4.1/baidunetdisk_3.4.1_amd64.deb
+ARG VERSION=3.5.0
+ENV URI=http://issuecdn.baidupcs.com/issue/netdisk/LinuxGuanjia/$VERSION/baidunetdisk_$VERSION_amd64.deb
 
 ENV DISPLAY=":1"
 ENV ENABLE_CJK_FONT=1
