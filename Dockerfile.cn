@@ -1,6 +1,6 @@
 FROM jlesage/baseimage-gui:debian-9
 
-ENV VERSION=3.5.0
+ENV VERSION=4.3.0
 ENV URI=http://issuecdn.baidupcs.com/issue/netdisk/LinuxGuanjia/$VERSION/baidunetdisk_${VERSION}_amd64.deb
 
 ENV DISPLAY=":1"
