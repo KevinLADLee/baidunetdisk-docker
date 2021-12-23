@@ -1,8 +1,0 @@
-{
-    "python.autoComplete.extraPaths": [
-        "/home/kevinlad/carla/overtaking_behavior_tree/ros1_ws/devel/lib/python3/dist-packages",
-        "/opt/ros/noetic/lib/python3/dist-packages",
-        "/home/kevinlad/carla/overtaking_behavior_tree/CARLA_0.9.11/PythonAPI/carla/dist/carla-0.9.11-py3.7-linux-x86_64.egg",
-        "/home/kevinlad/carla/overtaking_behavior_tree/CARLA_0.9.11/PythonAPI/carla/"
-    ]
-}
