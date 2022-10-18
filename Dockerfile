@@ -8,7 +8,8 @@ ENV ENABLE_CJK_FONT=1
 ENV TZ=Asia/Shanghai
 
 RUN apt-get update \
-    && apt-get install -y --no-install-recommends wget                  \
+    && apt-get install -y --no-install-recommends wget curl  \
+                          ca-certificates \
                           desktop-file-utils    \
                           libasound2-dev        \
                           locales               \
@@ -25,7 +26,7 @@ RUN apt-get update \
                           libsecret-1-0         \
     && rm -rf /var/lib/apt/lists/*
 
-RUN wget -q ${URI} -O /defaults/baidunetdisk.deb     \
+RUN curl -L ${URI} -o /defaults/baidunetdisk.deb     \
     && apt-get install -y /defaults/baidunetdisk.deb \
     && rm /defaults/baidunetdisk.deb 
 
